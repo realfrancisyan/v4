@@ -1,0 +1,60 @@
+.portal {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 80px;
+  box-sizing: border-box;
+}
+
+.portalContainer {
+  width: 80%;
+}
+
+.portalTitle {
+  color: #333;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding-bottom: 30px;
+  font-weight: 600;
+}
+
+.portalListContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portalList {
+  width: 50%;
+  display: block;
+  padding-bottom: 30px;
+}
+
+.portalLinkTitle {
+  margin-bottom: 10px;
+}
+
+.portalLink {
+  text-decoration: none;
+  color: #1a1d20;
+}
+
+.portalLinkWrapper {
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.portalLinkWrapper:hover {
+  opacity: 0.8;
+}
+
+.portalLinkIcon {
+  width: 14px;
+  margin-left: 8px;
+}
+
+.portalDesc {
+  font-size: 14px;
+  color: #656d78;
+  line-height: 24px;
+  width: 80%;
+}

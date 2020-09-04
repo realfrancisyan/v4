@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>noun_Arrow_92222</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="noun_Arrow_92222" transform="translate(22.000000, 22.000000) rotate(-270.000000) translate(-22.000000, -22.000000) translate(0.000000, -0.000000)" fill="#1A1D20" fill-rule="nonzero">
+            <g id="Rectangle" transform="translate(22.000000, 22.000000) rotate(-180.000000) translate(-22.000000, -22.000000) translate(0.000000, -0.000000)">
+                <g transform="translate(20.000000, 1.000000)">
+                    <rect x="0" y="0" width="4" height="40"></rect>
+                </g>
+                <g transform="translate(22.000000, 22.000000) rotate(45.000000) translate(-22.000000, -22.000000) translate(7.000000, 7.000000)">
+                    <rect x="6.03961325e-14" y="26" width="30" height="4"></rect>
+                    <rect x="26" y="6.39488462e-14" width="4" height="30"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
