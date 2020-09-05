@@ -1,6 +1,13 @@
 /* 公用部分 */
+.section {
+  width: var(--desktop);
+  margin: 0 auto;
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+
 .sectionTitle {
-  color: var(--gray);
+  color: var(--light-gray);
   font-size: var(--small);
   letter-spacing: 2px;
   padding-bottom: 30px;
@@ -39,10 +46,51 @@
 }
 
 .projectDesc {
-  width: var(--home-wrapper);
+  width: 75%;
   padding: 20px 0;
-  font-size: var(--medium);
-  line-height: 28px;
+  font-size: var(--large);
+  line-height: 32px;
+}
+
+.curve {
+  transition: var(--transition);
+}
+
+.curve:hover {
+  opacity: 0.8;
+}
+
+.hire {
+  width: var(--desktop);
+  background-color: #f5f7fa;
+  padding: 20px;
+  border-radius: 4px;
+  color: #4a89dc;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.hire:hover {
+  opacity: 0.9;
+}
+
+.bubble {
+  background-color: #4a89dc;
+  color: var(--white);
+  padding: 4px 8px;
+  border-radius: 2px;
+  font-size: var(--extra-small);
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: var(--bold);
+}
+
+.rightArrow {
+  margin-left: 8px;
 }
 
 .projectLink {
@@ -50,13 +98,11 @@
   padding-top: 30px;
   color: var(--white);
   font-weight: var(--bold);
+  transition: var(--transition);
 }
 
-.portal {
-  width: var(--desktop);
-  margin: 0 auto;
-  padding-top: 80px;
-  box-sizing: border-box;
+.projectLink:hover {
+  opacity: 0.8;
 }
 
 .portalContainer {
@@ -85,7 +131,7 @@
 .portalLinkWrapper {
   display: flex;
   align-items: center;
-  transition: all 0.2s ease;
+  transition: var(--transition);
 }
 
 .portalLinkWrapper:hover {
@@ -102,4 +148,29 @@
   color: var(--gray);
   line-height: 24px;
   width: 80%;
+}
+
+.capabilities {
+  display: flex;
+  width: var(--home-wrapper);
+}
+
+.capabilities .skills {
+  width: 50%;
+}
+
+.skills li {
+  font-size: var(--medium);
+  color: var(--gray);
+  padding-bottom: 20px;
+}
+
+.skills li:last-child {
+  padding-bottom: 0;
+}
+
+.skills p {
+  width: 80%;
+  line-height: 28px;
+  color: var(--gray);
 }
