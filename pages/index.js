@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import styles from '../styles/Home.module.css';
 import ArrowIcon from '../assets/images/arrow.svg';
 import Background from '../assets/images/background.jpg';
@@ -185,6 +186,7 @@ export default function Home() {
           </a>
         </div>
       </section>
+      <Footer />
     </React.Fragment>
   );
 }

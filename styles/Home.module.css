@@ -50,10 +50,12 @@
   padding: 20px 0;
   font-size: var(--large);
   line-height: 32px;
+  color: var(--dark-gray);
 }
 
 .curve {
   transition: var(--transition);
+  color: var(--dark-gray);
 }
 
 .curve:hover {

@@ -16,6 +16,7 @@
 
   /* font weight */
   --bold: 600;
+  --light: 300;
 
   /* responsive */
   --desktop: 60%;
