@@ -6,6 +6,9 @@ import ArrowIcon from '../assets/images/arrow.svg';
 import Background from '../assets/images/background.jpg';
 import CurveIcon from '../assets/images/curve.png';
 import RightArrowIcon from '../assets/images/arrowright.svg';
+import Project1 from '../assets/images/project1.jpg';
+import Project2 from '../assets/images/project2.jpg';
+import Project3 from '../assets/images/project3.jpg';
 
 const portalList = [
   {
@@ -153,6 +156,33 @@ export default function Home() {
               );
             })}
           </ul>
+        </div>
+      </section>
+
+      <section className={`${styles.section}`}>
+        <h2 className={styles.sectionTitle}>个人项目</h2>
+        <div className={styles.sideProjectWrapper}>
+          <a href="/" className={styles.sideProject}>
+            <img src={Project3} />
+            <div>
+              <p>Curve Serverless 配套 JS SDK</p>
+              <h3>curve-js-sdk</h3>
+            </div>
+          </a>
+          <a href="/" className={styles.sideProject}>
+            <img src={Project2} />
+            <div>
+              <p>个人网站第四版本</p>
+              <h3>v4</h3>
+            </div>
+          </a>
+          <a href="/" className={styles.sideProject}>
+            <img src={Project1} />
+            <div>
+              <p>又拍云云存储 Node.js 文件上传工具</p>
+              <h3>node-upyun-plugin</h3>
+            </div>
+          </a>
         </div>
       </section>
     </React.Fragment>
