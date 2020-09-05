@@ -1,11 +1,11 @@
 .footer {
   background-color: var(--main-font-color);
   margin-top: 80px;
-  padding-bottom: 120px;
+  padding-bottom: 100px;
 }
 
 .container {
-  padding-top: 120px;
+  padding-top: 100px;
   margin: 0 auto;
   width: var(--desktop);
   display: flex;

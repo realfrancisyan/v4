@@ -113,7 +113,7 @@ export default function Home() {
       <section className={styles.section}>
         <div className={styles.capabilities}>
           <div className={styles.skills}>
-            <h2 className={styles.sectionTitle}>个人技能</h2>
+            <h2 className={styles.sectionTitle}>核心技能</h2>
             <ul>
               <li>React</li>
               <li>Vue</li>

@@ -10,7 +10,7 @@ const Header = () => {
         <div>
           <img src={Logo} className={styles.logo} />
           <p className={styles.coop}>如对我的项目有兴趣，或想与我合作，</p>
-          <p className={styles.coop}>欢迎随时<a href='/'>联系或直接聘用</a>。</p>
+          <p className={styles.coop}>欢迎随时<a href='/'>联系或聘用</a>。</p>
         </div>
 
         <ul className={styles.links}>
