@@ -1,0 +1,20 @@
+:root {
+  /* colors */
+  --main-font-color: #1a1d20;
+  --white: #fff;
+  --gray: #656d78;
+
+  /* fonts */
+  --extra-large: 48px;
+  --medium: 18px;
+  --normal: 16px;
+  --small: 14px;
+
+  /* font weight */
+  --bold: 600;
+
+  /* responsive */
+  --desktop: 60%;
+  --home-wrapper: 80%;
+
+}
