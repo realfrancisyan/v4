@@ -78,9 +78,11 @@ export default function Home() {
 
       <section className={styles.section}>
         <h2 className={styles.hire}>
-          <span className={styles.bubble}>Available for Hire</span>
-          接受前端微信小程序、PC 端、H5 等短期或长期项目合作。查看更多
-          <img src={RightArrowIcon} className={styles.rightArrow} />
+          <span className={styles.available}>Available for Hire</span>
+          <span className={styles.bubble}>
+            接受前端微信小程序、PC 端、H5 等短期或长期项目合作。查看更多
+            <img src={RightArrowIcon} className={styles.rightArrow} />
+          </span>
         </h2>
       </section>
 

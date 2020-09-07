@@ -7,7 +7,6 @@
   --light-gray: #aab2bd;
 
   /* fonts */
-  --extra-large: 48px;
   --large: 20px;
   --medium: 18px;
   --normal: 16px;
@@ -24,4 +23,24 @@
 
   /* others */
   --transition: all 0.2s ease;
+}
+
+@media screen and (max-width: 1440px) {
+  :root {
+    /* responsive */
+    --screen: 80%;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  :root {
+    --screen: 90%;
+    --home-wrapper: 100%;
+
+    --large: 18px;
+    --medium: 16px;
+    --normal: 14px;
+    --small: 12px;
+    --extra-small: 8px;
+  }
 }

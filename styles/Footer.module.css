@@ -59,3 +59,20 @@
   font-size: var(--small);
   font-weight: var(--light);
 }
+
+@media screen and (max-width: 1060px) {
+  .footer {
+    background-color: var(--main-font-color);
+    margin-top: 80px;
+    padding-bottom: 60px;
+  }
+  
+  .container {
+    padding-top: 60px;
+    margin: 0 auto;
+    width: var(--screen);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

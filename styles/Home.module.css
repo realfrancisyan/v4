@@ -40,14 +40,14 @@
 }
 
 .projectSubTitle {
-  font-size: 18px;
+  font-size: var(--medium);
   padding-top: 20px;
   color: var(--white);
 }
 
 .projectDesc {
   width: 75%;
-  padding: 20px 0;
+  padding-top: 20px;
   font-size: var(--large);
   line-height: 32px;
   color: var(--dark-gray);
@@ -58,16 +58,11 @@
   color: var(--dark-gray);
 }
 
-.curve:hover {
-  opacity: 0.8;
-}
-
 .hire {
   width: var(--screen);
   background-color: #f5f7fa;
   padding: 20px;
   border-radius: 4px;
-  color: #4a89dc;
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -76,11 +71,7 @@
   line-height: 20px;
 }
 
-.hire:hover {
-  opacity: 0.9;
-}
-
-.bubble {
+.available {
   background-color: #4a89dc;
   color: var(--white);
   padding: 4px 8px;
@@ -93,6 +84,11 @@
   font-weight: var(--bold);
 }
 
+.bubble {
+  display: flex;
+  color: #4a89dc;
+}
+
 .rightArrow {
   margin-left: 8px;
 }
@@ -103,10 +99,6 @@
   color: var(--white);
   font-weight: var(--bold);
   transition: var(--transition);
-}
-
-.projectLink:hover {
-  opacity: 0.8;
 }
 
 .portalContainer {
@@ -124,6 +116,10 @@
   padding-bottom: 30px;
 }
 
+.portalList:last-child {
+  padding-bottom: 0;
+}
+
 .portalLinkTitle {
   margin-bottom: 10px;
 }
@@ -136,10 +132,7 @@
   display: flex;
   align-items: center;
   transition: var(--transition);
-}
-
-.portalLinkWrapper:hover {
-  opacity: 0.8;
+  font-size: var(--medium);
 }
 
 .portalLinkIcon {
@@ -164,7 +157,7 @@
 }
 
 .skills li {
-  font-size: var(--medium);
+  font-size: var(--large);
   color: var(--gray);
   padding-bottom: 20px;
 }
@@ -175,7 +168,8 @@
 
 .skills p {
   width: 80%;
-  line-height: 28px;
+  font-size: var(--medium);
+  line-height: 32px;
   color: var(--gray);
 }
 
@@ -193,11 +187,7 @@
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 4px;
-  transition: all .1s ease;
-}
-
-.sideProject:hover {
-  opacity: 0.9;
+  transition: all 0.1s ease;
 }
 
 .sideProject img {
@@ -226,4 +216,100 @@
   line-height: 34px;
   font-weight: var(--bold);
   color: var(--white);
+}
+
+@media screen and (min-width: 1061px) {
+  .curve:hover {
+    opacity: 0.8;
+  }
+
+  .hire:hover {
+    opacity: 0.9;
+  }
+
+  .projectLink:hover {
+    opacity: 0.8;
+  }
+
+  .portalLinkWrapper:hover {
+    opacity: 0.8;
+  }
+
+  .sideProject:hover {
+    opacity: 0.9;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .section {
+    padding-top: 50px;
+  }
+
+  .projectTitle {
+    height: 20px;
+  }
+
+  .projectDesc {
+    width: 100%;
+    font-size: var(--medium);
+    line-height: 28px;
+  }
+
+  .hire {
+    width: 100%;
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+  .bubble {
+    padding-top: 10px;
+    font-size: var(--normal);
+    line-height: 22px;
+  }
+
+  .portalList {
+    width: 100%;
+  }
+
+  .portalDesc {
+    width: 100%;
+  }
+
+  .skills li {
+    font-size: var(--medium);
+  }
+
+  .skills p {
+    font-size: var(--normal);
+    line-height: 24px;
+    width: 100%;
+  }
+
+  .sideProjectWrapper {
+    flex-direction: column;
+  }
+
+  .sideProject {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+
+  .sideProject:last-child {
+    margin-bottom: 0;
+  }
+
+  .sideProject h3 {
+    font-size: 20px;
+    padding-top: 10px;
+  }
+
+  .sideProject p {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .sideProjectWrapper {
+    padding-bottom: 0;
+  }
 }
