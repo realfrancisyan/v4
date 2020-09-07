@@ -66,13 +66,13 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.projectDesc}>
-          Curve 的目标在于简化小型 Web 项目中后端常见的 CRUD
+          Curve 旨在简化小型 Web 项目中后端常见的 CRUD
           操作，从而前端不再需要依赖后端新增特定接口才能获取数据。通过自托管
-          Curve，再也无须把自己的数据交托给第三方服务商，安全性能更高。配合&nbsp;
+          Curve，再也无须把自己的数据交托给第三方服务商，安全性更高。配合&nbsp;
           <a href="/" className={styles.curve}>
             Curve JS SDK
           </a>
-          ，前端能更方便调用接口数据，大大提供开发效率。
+          ，前端能更方便地调用接口数据，大大提供开发效率。
         </div>
       </section>
 
@@ -186,6 +186,7 @@ export default function Home() {
           </a>
         </div>
       </section>
+
       <Footer />
     </React.Fragment>
   );

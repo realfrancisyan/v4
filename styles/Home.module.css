@@ -1,6 +1,6 @@
 /* 公用部分 */
 .section {
-  width: var(--desktop);
+  width: var(--screen);
   margin: 0 auto;
   padding-top: 100px;
   box-sizing: border-box;
@@ -15,7 +15,7 @@
 }
 
 .project {
-  width: var(--desktop);
+  width: var(--screen);
   margin: 0 auto;
   padding-top: 50px;
 }
@@ -63,7 +63,7 @@
 }
 
 .hire {
-  width: var(--desktop);
+  width: var(--screen);
   background-color: #f5f7fa;
   padding: 20px;
   border-radius: 4px;
