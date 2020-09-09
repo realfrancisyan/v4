@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import PortalList from '../components/PortalList';
 import styles from '../styles/Home.module.css';
 import ArrowIcon from '../assets/images/arrow.svg';
 import Background from '../assets/images/background.jpg';
@@ -85,31 +86,7 @@ const Home: React.FC = () => {
         </h2>
       </section>
 
-      <section className={styles.section}>
-        <div className={styles.portalContainer}>
-          <h2 className={styles.sectionTitle}>我的想法</h2>
-          <ul className={styles.portalListContainer}>
-            {portalList.map((portal) => {
-              return (
-                <li key={portal.name} className={styles.portalList}>
-                  <h3 className={styles.portalLinkTitle}>
-                    <a href="/" className={styles.portalLink} key={portal.name}>
-                      <span className={styles.portalLinkWrapper}>
-                        {portal.name}
-                        <img
-                          src={ArrowIcon}
-                          className={styles.portalLinkIcon}
-                        />
-                      </span>
-                    </a>
-                  </h3>
-                  <p className={styles.portalDesc}>{portal.desc}</p>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
+      <PortalList title="我的想法" portalList={portalList}></PortalList>
 
       <section className={styles.section}>
         <div className={styles.capabilities}>
@@ -135,33 +112,9 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className={styles.section}>
-        <div className={styles.portalContainer}>
-          <h2 className={styles.sectionTitle}>有用链接</h2>
-          <ul className={styles.portalListContainer}>
-            {usefulLinks.map((portal) => {
-              return (
-                <li key={portal.name} className={styles.portalList}>
-                  <h3 className={styles.portalLinkTitle}>
-                    <a href="/" className={styles.portalLink} key={portal.name}>
-                      <span className={styles.portalLinkWrapper}>
-                        {portal.name}
-                        <img
-                          src={ArrowIcon}
-                          className={styles.portalLinkIcon}
-                        />
-                      </span>
-                    </a>
-                  </h3>
-                  <p className={styles.portalDesc}>{portal.desc}</p>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
+      <PortalList title="有用链接" portalList={usefulLinks}></PortalList>
 
-      <section className={`${styles.section}`}>
+      <section className={styles.section}>
         <h2 className={styles.sectionTitle}>个人项目</h2>
         <div className={styles.sideProjectWrapper}>
           <a href="/" className={styles.sideProject}>
