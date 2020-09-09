@@ -10,12 +10,20 @@ const Header = () => {
 
       <ul className={styles.links}>
         <li>
-          <a href="https://github.com/realfrancisyan" target="_blank">
+          <a
+            href="https://github.com/realfrancisyan"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={GitHubIcon} />
           </a>
         </li>
         <li>
-          <a href="https://instagram.com/realfrancisyan" target="_blank">
+          <a
+            href="https://instagram.com/realfrancisyan"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={InstagramIcon} />
           </a>
         </li>

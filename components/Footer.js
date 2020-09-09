@@ -10,17 +10,27 @@ const Header = () => {
         <div>
           <img src={Logo} className={styles.logo} />
           <p className={styles.coop}>如对我的项目有兴趣，或想与我合作，</p>
-          <p className={styles.coop}>欢迎随时<a href='/'>联系或聘用</a>。</p>
+          <p className={styles.coop}>
+            欢迎随时<a href="/">联系或聘用</a>。
+          </p>
         </div>
 
         <ul className={styles.links}>
           <li>
-            <a href="https://github.com/realfrancisyan" target="_blank">
+            <a
+              href="https://github.com/realfrancisyan"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={GitHubIcon} />
             </a>
           </li>
           <li>
-            <a href="https://instagram.com/realfrancisyan" target="_blank">
+            <a
+              href="https://instagram.com/realfrancisyan"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={InstagramIcon} />
             </a>
           </li>
