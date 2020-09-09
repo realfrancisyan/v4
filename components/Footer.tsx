@@ -3,7 +3,7 @@ import Logo from '../assets/images/logo-white.svg';
 import GitHubIcon from '../assets/images/github.svg';
 import InstagramIcon from '../assets/images/instagram.svg';
 
-const Header = () => {
+const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -44,4 +44,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Footer;
