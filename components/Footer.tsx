@@ -1,9 +1,10 @@
+import React from 'react';
 import styles from '../styles/Footer.module.css';
 import Logo from '../assets/images/logo-white.svg';
 import GitHubIcon from '../assets/images/github.svg';
 import InstagramIcon from '../assets/images/instagram.svg';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
