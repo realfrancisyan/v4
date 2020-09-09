@@ -1,0 +1,96 @@
+.container {
+  width: var(--screen);
+  margin: 0 auto;
+  padding: 50px 0;
+  display: flex;
+}
+
+.posts {
+  width: var(--home-wrapper);
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+.category:first-child {
+  padding-top: 0;
+}
+
+.categoryTitle {
+  color: var(--light-gray);
+  font-size: var(--small);
+  letter-spacing: 2px;
+  font-weight: var(--bold);
+}
+
+.postWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  width: 50%;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+  width: var(--home-wrapper);
+}
+
+.titleWrapper:hover {
+  opacity: 0.8;
+}
+
+.title {
+  font-size: var(--extra-large);
+  line-height: 32px;
+}
+
+.linkIcon {
+  height: 16px;
+  margin-left: 10px;
+}
+
+.date {
+  padding: 10px 0;
+  color: var(--gray);
+}
+
+.tags {
+  position: relative;
+}
+
+.tagWrapper {
+  position: sticky;
+  top: 176px;
+}
+
+.tagList {
+  padding-top: 20px;
+  overflow: hidden;
+}
+
+.tag {
+  margin: 10px 0;
+  font-size: var(--medium);
+  cursor: pointer;
+  color: var(--light-gray);
+  transition: var(--transition);
+}
+
+.tag:hover {
+  color: var(--gray);
+}
+
+.tagActive {
+  color: var(--main-font-color);
+}

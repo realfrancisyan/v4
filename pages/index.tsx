@@ -44,7 +44,7 @@ const usefulLinks = [
 
 const Home: React.FC = () => {
   return (
-    <Layout>
+    <Layout title="Home">
       <section className={styles.project}>
         <h2 className={styles.sectionTitle}>近期项目</h2>
         <div className={styles.projectWrapper}>
