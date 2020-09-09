@@ -1,9 +1,7 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Layout from '../components/Layout';
 import PortalList from '../components/PortalList';
 import styles from '../styles/Home.module.css';
-import ArrowIcon from '../assets/images/arrow.svg';
 import Background from '../assets/images/background.jpg';
 import CurveIcon from '../assets/images/curve.png';
 import RightArrowIcon from '../assets/images/arrow-right.svg';
@@ -46,9 +44,7 @@ const usefulLinks = [
 
 const Home: React.FC = () => {
   return (
-    <React.Fragment>
-      <Header />
-
+    <Layout>
       <section className={styles.project}>
         <h2 className={styles.sectionTitle}>近期项目</h2>
         <div className={styles.projectWrapper}>
@@ -140,9 +136,7 @@ const Home: React.FC = () => {
           </a>
         </div>
       </section>
-
-      <Footer />
-    </React.Fragment>
+    </Layout>
   );
 };
 
