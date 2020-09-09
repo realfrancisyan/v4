@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css';
 import ArrowIcon from '../assets/images/arrow.svg';
 import Background from '../assets/images/background.jpg';
 import CurveIcon from '../assets/images/curve.png';
-import RightArrowIcon from '../assets/images/arrowright.svg';
+import RightArrowIcon from '../assets/images/arrow-right.svg';
 import Project1 from '../assets/images/project1.jpg';
 import Project2 from '../assets/images/project2.jpg';
 import Project3 from '../assets/images/project3.jpg';
@@ -43,7 +43,7 @@ const usefulLinks = [
   { name: 'Dribbble Likes', desc: '欣赏创意产品的地方。' },
 ];
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <React.Fragment>
       <Header />
@@ -191,4 +191,6 @@ export default function Home() {
       <Footer />
     </React.Fragment>
   );
-}
+};
+
+export default Home;
