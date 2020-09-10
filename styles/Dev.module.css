@@ -41,7 +41,6 @@
 .titleWrapper {
   display: flex;
   align-items: center;
-  cursor: pointer;
   transition: var(--transition);
   width: var(--home-wrapper);
 }
@@ -53,11 +52,13 @@
 .title {
   font-size: var(--extra-large);
   line-height: 32px;
+  cursor: pointer;
 }
 
 .linkIcon {
   height: 16px;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .date {
