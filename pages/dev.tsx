@@ -1,5 +1,6 @@
 import React from 'react';
 import BaaS from 'curve-js-sdk';
+import { NextPage } from 'next';
 import moment from 'moment';
 import Layout from '../components/Layout';
 import styles from '../styles/Dev.module.css';
@@ -11,6 +12,7 @@ type Post = {
   type: number;
   createdAt: string;
   description: string;
+  month?: string;
 };
 
 type PostByMonth = {
@@ -32,7 +34,7 @@ type Props = {
   tags: Tags;
 };
 
-const Home: React.FC<Props> = ({ posts = [], tags = {} }: Props) => {
+const Home: NextPage<Props> = ({ posts = [], tags = {} }: Props) => {
   return (
     <Layout title="前端博客">
       <section className={styles.container}>
