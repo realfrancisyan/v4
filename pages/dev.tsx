@@ -25,26 +25,22 @@ type Tag = {
   type: number;
 };
 
-type Tags = {
-  [key: string]: string;
-};
-
 type Props = {
   posts: PostByMonth[];
-  tags: Tags;
+  tags: Tag[];
 };
 
-const Home: NextPage<Props> = ({ posts = [], tags = {} }: Props) => {
+const Home: NextPage<Props> = ({ posts = [], tags = [] }: Props) => {
   return (
     <Layout title="前端博客">
       <section className={styles.container}>
         <div className={styles.posts}>
-          {posts.map((postByMonth) => {
+          {posts.map(postByMonth => {
             return (
               <div className={styles.category} key={postByMonth.month}>
                 <h2 className={styles.categoryTitle}>{postByMonth.month}</h2>
                 <div className={styles.postWrapper}>
-                  {postByMonth.data.map((post) => {
+                  {postByMonth.data.map(post => {
                     return (
                       <div className={styles.post} key={post.id}>
                         <div className={styles.titleWrapper}>
@@ -53,7 +49,7 @@ const Home: NextPage<Props> = ({ posts = [], tags = {} }: Props) => {
                         </div>
                         <p className={styles.date}>
                           {moment(post.createdAt).format('YYYY年M月D日')} ·{' '}
-                          {tags[post.type]}
+                          {tags.filter(tag => tag.type === post.type)[0].name}
                         </p>
                       </div>
                     );
@@ -67,15 +63,15 @@ const Home: NextPage<Props> = ({ posts = [], tags = {} }: Props) => {
           <div className={styles.tagWrapper}>
             <h3 className={styles.categoryTitle}>分类查询</h3>
             <ul className={styles.tagList}>
-              {Object.keys(tags).map((type) => {
+              {tags.map((tag: Tag) => {
                 return (
                   <p
                     className={`${styles.tag} ${
-                      type === '-1' && styles.tagActive
+                      tag.type === -1 && styles.tagActive
                     }`}
-                    key={type}
+                    key={tag.type}
                   >
-                    {tags[type]}
+                    {tag.name}
                   </p>
                 );
               })}
@@ -89,13 +85,13 @@ const Home: NextPage<Props> = ({ posts = [], tags = {} }: Props) => {
 
 // 将文章列表按月分类
 const mapMonth = (posts: Post[]) => {
-  const result = posts.map((post) => {
+  const result = posts.map(post => {
     post.month = moment(post.createdAt).format('YYYY年M月');
     return post;
   });
 
   const newPosts = [];
-  result.forEach((post) => {
+  result.forEach(post => {
     let index = -1;
     const alreadyExists = newPosts.some((newPost, j) => {
       if (post.month === newPost.month) {
@@ -130,12 +126,8 @@ const getTags = async () => {
   const response = await tags.get({ exclude: ['createdAt'] });
   const { data } = response.data;
 
-  data.push({ name: '全部', type: -1 });
-  const result = data.reduce((final: Tags, tag: Tag) => {
-    final[tag.type] = tag.name;
-    return final;
-  }, {});
-  return result;
+  data.unshift({ name: '全部', type: -1 });
+  return data;
 };
 
 Home.getInitialProps = async () => {
