@@ -13,7 +13,7 @@ const Layout: React.FC<Props> = ({
   title = 'This is the default title',
 }: Props) => {
   return (
-    <React.Fragment>
+    <>
       <Head>
         <title>{title} | Jiajun Yan</title>
         <meta charSet="utf-8" />
@@ -22,7 +22,7 @@ const Layout: React.FC<Props> = ({
       <Header />
       {children}
       <Footer />
-    </React.Fragment>
+    </>
   );
 };
 
