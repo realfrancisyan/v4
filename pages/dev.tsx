@@ -30,7 +30,7 @@ type Props = {
   tags: Tag[];
 };
 
-const Home: NextPage<Props> = ({ posts = [], tags = [] }: Props) => {
+const Page: NextPage<Props> = ({ posts = [], tags = [] }: Props) => {
   return (
     <Layout title="前端博客">
       <section className={styles.container}>
@@ -130,11 +130,11 @@ const getTags = async () => {
   return data;
 };
 
-Home.getInitialProps = async () => {
+Page.getInitialProps = async () => {
   const posts = await getPosts();
   const tags = await getTags();
 
   return { posts, tags };
 };
 
-export default Home;
+export default Page;
