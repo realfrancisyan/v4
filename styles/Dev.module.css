@@ -45,10 +45,6 @@
   width: var(--home-wrapper);
 }
 
-.titleWrapper:hover {
-  opacity: 0.8;
-}
-
 .title {
   font-size: var(--extra-large);
   line-height: 32px;
@@ -88,10 +84,28 @@
   transition: var(--transition);
 }
 
-.tag:hover {
-  color: var(--gray);
-}
-
 .tagActive {
   color: var(--main-font-color);
+}
+
+@media screen and (min-width: 1061px) {
+  .titleWrapper:hover {
+    opacity: 0.8;
+  }
+
+  .tag:hover {
+    color: var(--gray);
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .tags {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post {
+    width: 100%;
+  }
 }

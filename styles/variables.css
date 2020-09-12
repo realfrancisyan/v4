@@ -2,9 +2,12 @@
   /* colors */
   --main-font-color: #1a1d20;
   --white: #fff;
-  --dark-gray: #515458;
+  --darker-gray: #515458;
+  --dark-gray: #434a54;
   --gray: #656d78;
   --light-gray: #aab2bd;
+  --blue: #0f4bf1;
+  --dark-blue: #0a2f94;
 
   /* fonts */
   --extra-large: 22px;
@@ -21,6 +24,7 @@
   /* responsive */
   --screen: 60%;
   --home-wrapper: 80%;
+  --post-wrapper: 70%;
 
   /* others */
   --transition: all 0.2s ease;
@@ -35,9 +39,13 @@
 
 @media screen and (max-width: 1060px) {
   :root {
+    /* responsive */
     --screen: 90%;
     --home-wrapper: 100%;
+    --post-wrapper: 100%;
 
+    /* fonts */
+    --extra-large: 20px;
     --large: 18px;
     --medium: 16px;
     --normal: 14px;

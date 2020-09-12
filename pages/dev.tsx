@@ -1,6 +1,7 @@
 import React from 'react';
 import BaaS from 'curve-js-sdk';
 import { NextPage } from 'next';
+import Link from 'next/link';
 import moment from 'moment';
 import Layout from '../components/Layout';
 import styles from '../styles/Dev.module.css';
@@ -43,10 +44,12 @@ const Page: NextPage<Props> = ({ posts = [], tags = [] }: Props) => {
                   {postByMonth.data.map(post => {
                     return (
                       <div className={styles.post} key={post.id}>
-                        <div className={styles.titleWrapper}>
-                          <h2 className={styles.title}>{post.title}</h2>
-                          <img src={ArrowIcon} className={styles.linkIcon} />
-                        </div>
+                        <Link href="/dev/posts/[id]" as={`/dev/posts/${post.id}`}>
+                          <div className={styles.titleWrapper}>
+                            <h2 className={styles.title}><a>{post.title}</a></h2>
+                            <img src={ArrowIcon} className={styles.linkIcon} />
+                          </div>
+                        </Link>
                         <p className={styles.date}>
                           {moment(post.createdAt).format('YYYY年M月D日')} ·{' '}
                           {tags.filter(tag => tag.type === post.type)[0].name}
