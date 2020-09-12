@@ -18,10 +18,10 @@ export default {
       name: '旅游档案馆',
       desc: '记录我过往游历过的地方。大部分图片于留学期间拍摄。',
     },
-    {
-      name: '常用 iPhone Apps',
-      desc: '一个展示我经常使用的 iPhone Apps 的列表。会按时间推移不断修改。',
-    },
+    // {
+    //   name: '常用 iPhone Apps',
+    //   desc: '一个展示我经常使用的 iPhone Apps 的列表。会按时间推移不断修改。',
+    // },
   ],
   usefulLinks: [
     {
