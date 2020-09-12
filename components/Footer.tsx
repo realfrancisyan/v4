@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import styles from '../styles/Footer.module.css';
 import Logo from '../assets/images/logo-white.svg';
 import GitHubIcon from '../assets/images/github.svg';
@@ -9,7 +10,11 @@ const Footer: React.FC = () => {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div>
-          <img src={Logo} className={styles.logo} />
+          <Link href="/">
+            <a>
+              <img src={Logo} className={styles.logo} />
+            </a>
+          </Link>
           <p className={styles.coop}>如对我的项目有兴趣，或想与我合作，</p>
           <p className={styles.coop}>
             欢迎随时<a href="/">联系或聘用</a>。
