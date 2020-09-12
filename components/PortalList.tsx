@@ -1,10 +1,12 @@
 import React from 'react';
+import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import ArrowIcon from '../assets/images/arrow.svg';
 
 type Portal = {
   name: string;
   desc: string;
+  url: string;
 };
 
 type Props = {
@@ -22,12 +24,24 @@ const PortalList: React.FC<Props> = ({ title = '', portalList }: Props) => {
             return (
               <li key={portal.name} className={styles.portalList}>
                 <h3 className={styles.portalLinkTitle}>
-                  <a href="/" className={styles.portalLink} key={portal.name}>
-                    <span className={styles.portalLinkWrapper}>
-                      {portal.name}
-                      <img src={ArrowIcon} className={styles.portalLinkIcon} />
-                    </span>
-                  </a>
+                  <Link
+                    href={portal.url}
+                    passHref={portal.url.includes('http')}
+                  >
+                    <a
+                      className={styles.portalLink}
+                      key={portal.name}
+                      target={portal.url.includes('http') ? '_blank' : '_self'}
+                    >
+                      <span className={styles.portalLinkWrapper}>
+                        {portal.name}
+                        <img
+                          src={ArrowIcon}
+                          className={styles.portalLinkIcon}
+                        />
+                      </span>
+                    </a>
+                  </Link>
                 </h3>
                 <p className={styles.portalDesc}>{portal.desc}</p>
               </li>

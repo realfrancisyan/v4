@@ -24,7 +24,12 @@ const Page: React.FC = () => {
             <p className={styles.projectSubTitle}>
               简单易用、可自托管的小型 Serverless 服务
             </p>
-            <a href="/" className={styles.projectLink}>
+            <a
+              href="https://github.com/realfrancisyan/curve"
+              className={styles.projectLink}
+              target="_blank"
+              rel="noreferrer"
+            >
               在 GitHub 查看该项目
             </a>
           </div>
@@ -33,7 +38,12 @@ const Page: React.FC = () => {
           Curve 旨在简化小型 Web 项目中后端常见的 CRUD
           操作，从而前端不再需要依赖后端新增特定接口才能获取数据。通过自托管
           Curve，再也无须把自己的数据交托给第三方服务商，安全性更高。配合&nbsp;
-          <a href="/" className={styles.curve}>
+          <a
+            href="https://github.com/realfrancisyan/curve-js-sdk"
+            className={styles.curve}
+            target="_blank"
+            rel="noreferrer"
+          >
             Curve JS SDK
           </a>
           ，前端能更方便地调用接口数据，大大提供开发效率。
@@ -87,21 +97,36 @@ const Page: React.FC = () => {
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>个人项目</h2>
         <div className={styles.sideProjectWrapper}>
-          <a href="/" className={styles.sideProject}>
+          <a
+            href="https://github.com/realfrancisyan/curve-js-sdk"
+            className={styles.sideProject}
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={Project3} />
             <div>
               <p>Curve Serverless 配套 JS SDK</p>
               <h3>curve-js-sdk</h3>
             </div>
           </a>
-          <a href="/" className={styles.sideProject}>
+          <a
+            href="https://github.com/realfrancisyan/v4"
+            className={styles.sideProject}
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={Project2} />
             <div>
               <p>个人网站第四版本</p>
               <h3>v4</h3>
             </div>
           </a>
-          <a href="/" className={styles.sideProject}>
+          <a
+            href="https://github.com/realfrancisyan/node-upyun-plugin"
+            className={styles.sideProject}
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={Project1} />
             <div>
               <p>又拍云云存储 Node.js 文件上传工具</p>
