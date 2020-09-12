@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import BaaS from 'curve-js-sdk';
 import { NextPage } from 'next';
 import Link from 'next/link';
@@ -16,37 +16,46 @@ type Post = {
   month?: string;
 };
 
-type PostByMonth = {
-  month: string;
-  data: Post[];
-};
-
 type Tag = {
   name: string;
   type: number;
 };
 
 type Props = {
-  posts: PostByMonth[];
+  posts: Post[];
   tags: Tag[];
 };
 
 const Page: NextPage<Props> = ({ posts = [], tags = [] }: Props) => {
+  const [postsByMonth, setPostsByMonth] = useState(mapMonth(posts));
+  const [currentTag, setCurrentTag] = useState(-1);
+
+  const getPostsByTag = (tag: number) => {
+    const postsByTag = posts.filter(post => post.type === tag);
+    setPostsByMonth(mapMonth(tag === -1 ? posts : postsByTag));
+    setCurrentTag(tag);
+  };
+
   return (
     <Layout title="前端博客">
       <section className={styles.container}>
         <div className={styles.posts}>
-          {posts.map(postByMonth => {
+          {postsByMonth.map(postByMonth => {
             return (
               <div className={styles.category} key={postByMonth.month}>
                 <h2 className={styles.categoryTitle}>{postByMonth.month}</h2>
                 <div className={styles.postWrapper}>
-                  {postByMonth.data.map(post => {
+                  {postByMonth.data.map((post: Post) => {
                     return (
                       <div className={styles.post} key={post.id}>
-                        <Link href="/dev/posts/[id]" as={`/dev/posts/${post.id}`}>
+                        <Link
+                          href="/dev/posts/[id]"
+                          as={`/dev/posts/${post.id}`}
+                        >
                           <div className={styles.titleWrapper}>
-                            <h2 className={styles.title}><a>{post.title}</a></h2>
+                            <h2 className={styles.title}>
+                              <a>{post.title}</a>
+                            </h2>
                             <img src={ArrowIcon} className={styles.linkIcon} />
                           </div>
                         </Link>
@@ -70,9 +79,10 @@ const Page: NextPage<Props> = ({ posts = [], tags = [] }: Props) => {
                 return (
                   <p
                     className={`${styles.tag} ${
-                      tag.type === -1 && styles.tagActive
+                      tag.type === currentTag && styles.tagActive
                     }`}
                     key={tag.type}
+                    onClick={() => getPostsByTag(tag.type)}
                   >
                     {tag.name}
                   </p>
@@ -121,7 +131,7 @@ const getPosts = async () => {
     exclude: ['body', 'updatedAt'],
   });
 
-  return mapMonth(response.data.data);
+  return response.data.data;
 };
 
 const getTags = async () => {
