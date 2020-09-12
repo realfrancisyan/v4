@@ -23,28 +23,28 @@
   line-height: 32px;
 }
 
-.article h1 {
+.article h2 {
   font-size: var(--extra-large);
 }
 
-.article h2 {
+.article h3 {
   font-size: var(--large);
 }
 
-.article h3 {
+.article h4 {
   font-size: var(--medium);
 }
 
-.article h4 {
-  font-size: var(--normal);
-}
-
 .article h5 {
-  font-size: var(--small);
+  font-size: var(--medium);
 }
 
 .article h6 {
-  font-size: var(--extra-small);
+  font-size: var(--small);
+}
+
+.article h1 {
+  font-size: var(--extreme);
 }
 
 .article h1,
@@ -59,7 +59,7 @@
 }
 
 .article p {
-  font-size: var(--normal);
+  font-size: var(--medium);
   padding-bottom: 20px;
 }
 
@@ -83,7 +83,7 @@
 
 .article ul li,
 .article ol li {
-  font-size: var(--normal);
+  font-size: var(--medium);
 }
 
 .article ul li ul,
@@ -124,8 +124,9 @@
 }
 
 .article pre {
-  font-size: var(--normal) !important;
+  font-size: var(--medium) !important;
   margin-bottom: 40px !important;
+  background-color: rgb(249 249 249) !important;
 }
 
 .article hr {

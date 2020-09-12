@@ -10,6 +10,7 @@
   --dark-blue: #0a2f94;
 
   /* fonts */
+  --extreme: 24px;
   --extra-large: 22px;
   --large: 20px;
   --medium: 18px;
@@ -45,6 +46,7 @@
     --post-wrapper: 100%;
 
     /* fonts */
+    --extreme: 22px;
     --extra-large: 20px;
     --large: 18px;
     --medium: 16px;
