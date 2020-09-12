@@ -53,9 +53,9 @@ const Page: NextPage<Props> = ({ posts = [], tags = [] }: Props) => {
                           as={`/dev/posts/${post.id}`}
                         >
                           <div className={styles.titleWrapper}>
-                            <h2 className={styles.title}>
+                            <span className={styles.title}>
                               <a>{post.title}</a>
-                            </h2>
+                            </span>
                             <img src={ArrowIcon} className={styles.linkIcon} />
                           </div>
                         </Link>
