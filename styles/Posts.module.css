@@ -54,8 +54,8 @@
 .article h5,
 .article h6 {
   color: var(--darker-gray);
-  font-weight: var(--bold);
-  padding-bottom: 20px;
+  font-weight: var(--semi-bold);
+  padding-bottom: 30px;
 }
 
 .article p {
@@ -124,9 +124,9 @@
 }
 
 .article pre {
-  font-size: var(--medium) !important;
+  font-size: var(--small) !important;
   margin-bottom: 40px !important;
-  background-color: rgb(249 249 249) !important;
+  background-color: #f5f7fa !important;
 }
 
 .article hr {
