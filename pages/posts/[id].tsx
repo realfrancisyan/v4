@@ -43,6 +43,14 @@ const ImageComponent = ({ src, title }: ImageProps) => {
   );
 };
 
+const LinkComponent = (props: any) => {
+  return (
+    <a href={props.href} target="_blank" rel="noopener noreferrer">
+      {props.children[0].props.value}
+    </a>
+  );
+};
+
 const Page: NextPage<Props> = ({ post }: Props) => {
   return (
     <Layout title={post.title}>
@@ -57,6 +65,7 @@ const Page: NextPage<Props> = ({ post }: Props) => {
             renderers={{
               code: CodeBlock,
               image: ImageComponent,
+              link: LinkComponent,
             }}
           ></ReactMarkdown>
         </article>
