@@ -34,6 +34,7 @@ const Page: NextPage<Props> = ({ posts = [], tags = [] }: Props) => {
     const postsByTag = posts.filter(post => post.type === tag);
     setPostsByMonth(mapMonth(tag === -1 ? posts : postsByTag));
     setCurrentTag(tag);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -48,10 +49,7 @@ const Page: NextPage<Props> = ({ posts = [], tags = [] }: Props) => {
                   {postByMonth.data.map((post: Post) => {
                     return (
                       <div className={styles.post} key={post.id}>
-                        <Link
-                          href="/posts/[id]"
-                          as={`/posts/${post.id}`}
-                        >
+                        <Link href="/posts/[id]" as={`/posts/${post.id}`}>
                           <div className={styles.titleWrapper}>
                             <span className={styles.title}>
                               <a>{post.title}</a>
