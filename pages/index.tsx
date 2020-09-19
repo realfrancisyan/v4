@@ -37,7 +37,7 @@ const Page: NextPage<Props> = ({ posts = [], tags = [] }: Props) => {
   };
 
   return (
-    <Layout title="前端博客">
+    <Layout>
       <section className={styles.container}>
         <div className={styles.posts}>
           {postsByMonth.map(postByMonth => {
