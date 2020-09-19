@@ -1,142 +1,153 @@
-import React from 'react';
+import React, { useState } from 'react';
+import BaaS from 'curve-js-sdk';
+import { NextPage } from 'next';
+import Link from 'next/link';
+import moment from 'moment';
 import Layout from '../components/Layout';
-import PortalList from '../components/PortalList';
 import styles from '../styles/Home.module.css';
-import Background from '../assets/images/background.jpg';
-import CurveIcon from '../assets/images/curve.png';
-import RightArrowIcon from '../assets/images/arrow-right.svg';
-import Project1 from '../assets/images/project1.jpg';
-import Project2 from '../assets/images/project2.jpg';
-import Project3 from '../assets/images/project3.jpg';
-import constants from '../constants';
+import ArrowIcon from '../assets/images/arrow.svg';
 
-const Page: React.FC = () => {
+type Post = {
+  id: string;
+  title: string;
+  type: number;
+  createdAt: string;
+  description: string;
+  month?: string;
+};
+
+type Tag = {
+  name: string;
+  type: number;
+};
+
+type Props = {
+  posts: Post[];
+  tags: Tag[];
+};
+
+const Page: NextPage<Props> = ({ posts = [], tags = [] }: Props) => {
+  const [postsByMonth, setPostsByMonth] = useState(mapMonth(posts));
+  const [currentTag, setCurrentTag] = useState(-1);
+
+  const getPostsByTag = (tag: number) => {
+    const postsByTag = posts.filter(post => post.type === tag);
+    setPostsByMonth(mapMonth(tag === -1 ? posts : postsByTag));
+    setCurrentTag(tag);
+  };
+
   return (
-    <Layout title="Home">
-      <section className={styles.project}>
-        <h2 className={styles.sectionTitle}>近期项目</h2>
-        <div className={styles.projectWrapper}>
-          <img src={Background} className={styles.projectImage} />
-          <div className={styles.projectTitleWrapper}>
-            <h2>
-              <img src={CurveIcon} className={styles.projectTitle} />
-            </h2>
-            <p className={styles.projectSubTitle}>
-              简单易用、可自托管的小型 Serverless 服务
-            </p>
-            <a
-              href="https://github.com/realfrancisyan/curve"
-              className={styles.projectLink}
-              target="_blank"
-              rel="noreferrer"
-            >
-              在 GitHub 查看该项目
-            </a>
-          </div>
+    <Layout title="前端博客">
+      <section className={styles.container}>
+        <div className={styles.posts}>
+          {postsByMonth.map(postByMonth => {
+            return (
+              <div className={styles.category} key={postByMonth.month}>
+                <h2 className={styles.categoryTitle}>{postByMonth.month}</h2>
+                <div className={styles.postWrapper}>
+                  {postByMonth.data.map((post: Post) => {
+                    return (
+                      <div className={styles.post} key={post.id}>
+                        <Link
+                          href="/posts/[id]"
+                          as={`/posts/${post.id}`}
+                        >
+                          <div className={styles.titleWrapper}>
+                            <span className={styles.title}>
+                              <a>{post.title}</a>
+                            </span>
+                            <img src={ArrowIcon} className={styles.linkIcon} />
+                          </div>
+                        </Link>
+                        <p className={styles.date}>
+                          {moment(post.createdAt).format('YYYY年M月D日')} ·{' '}
+                          {tags.filter(tag => tag.type === post.type)[0].name}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
         </div>
-        <div className={styles.projectDesc}>
-          Curve 旨在简化小型 Web 项目中后端常见的 CRUD
-          操作，从而前端不再需要依赖后端新增特定接口才能获取数据。通过自托管
-          Curve，再也无须把自己的数据交托给第三方服务商，安全性更高。配合&nbsp;
-          <a
-            href="https://github.com/realfrancisyan/curve-js-sdk"
-            className={styles.curve}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Curve JS SDK
-          </a>
-          ，前端能更方便地调用接口数据，大大提供开发效率。
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <h2 className={styles.hire}>
-          <span className={styles.available}>Available for Hire</span>
-          <span className={styles.bubble}>
-            接受前端微信小程序、PC 端、H5 等短期或长期项目合作。查看更多
-            <img src={RightArrowIcon} className={styles.rightArrow} />
-          </span>
-        </h2>
-      </section>
-
-      <PortalList
-        title="我的想法"
-        portalList={constants.portalList}
-      ></PortalList>
-
-      <section className={styles.section}>
-        <div className={styles.capabilities}>
-          <div className={styles.skills}>
-            <h2 className={styles.sectionTitle}>核心技能</h2>
-            <ul>
-              <li>React</li>
-              <li>Vue</li>
-              <li>微信小程序</li>
-              <li>H5 移动端</li>
-              <li>Flutter</li>
-              <li>Node 后端开发</li>
+        <div className={styles.tags}>
+          <div className={styles.tagWrapper}>
+            <h3 className={styles.categoryTitle}>分类查询</h3>
+            <ul className={styles.tagList}>
+              {tags.map((tag: Tag) => {
+                return (
+                  <p
+                    className={`${styles.tag} ${
+                      tag.type === currentTag && styles.tagActive
+                    }`}
+                    key={tag.type}
+                    onClick={() => getPostsByTag(tag.type)}
+                  >
+                    {tag.name}
+                  </p>
+                );
+              })}
             </ul>
           </div>
-          <div className={styles.skills}>
-            <h2 className={styles.sectionTitle}>更多技能标签</h2>
-            <p>
-              Next.js, Mongodb, Sketch, Koa, Ant Design, Element UI, 自适应布局,
-              VSCode, 蓝湖, 语雀, Linux, Git, SCSS, Webpack, DIV + CSS3, HTML5,
-              ES6, 微信公众号, Promise, Async Await, NPM
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <PortalList
-        title="有用链接"
-        portalList={constants.usefulLinks}
-      ></PortalList>
-
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>个人项目</h2>
-        <div className={styles.sideProjectWrapper}>
-          <a
-            href="https://github.com/realfrancisyan/curve-js-sdk"
-            className={styles.sideProject}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={Project3} />
-            <div>
-              <p>Curve Serverless 配套 JS SDK</p>
-              <h3>curve-js-sdk</h3>
-            </div>
-          </a>
-          <a
-            href="https://github.com/realfrancisyan/v4"
-            className={styles.sideProject}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={Project2} />
-            <div>
-              <p>个人网站第四版本</p>
-              <h3>v4</h3>
-            </div>
-          </a>
-          <a
-            href="https://github.com/realfrancisyan/node-upyun-plugin"
-            className={styles.sideProject}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src={Project1} />
-            <div>
-              <p>又拍云云存储 Node.js 文件上传工具</p>
-              <h3>node-upyun-plugin</h3>
-            </div>
-          </a>
         </div>
       </section>
     </Layout>
   );
+};
+
+// 将文章列表按月分类
+const mapMonth = (posts: Post[]) => {
+  const result = posts.map(post => {
+    post.month = moment(post.createdAt).format('YYYY年M月');
+    return post;
+  });
+
+  const newPosts = [];
+  result.forEach(post => {
+    let index = -1;
+    const alreadyExists = newPosts.some((newPost, j) => {
+      if (post.month === newPost.month) {
+        index = j;
+        return true;
+      }
+    });
+    if (!alreadyExists) {
+      newPosts.push({
+        month: post.month,
+        data: [post],
+      });
+    } else {
+      newPosts[index].data.push(post);
+    }
+  });
+  return newPosts;
+};
+
+const getPosts = async () => {
+  const dev = new BaaS.Collection('dev');
+  const response = await dev.get({
+    pageSize: 9999,
+    exclude: ['body', 'updatedAt'],
+  });
+
+  return response.data.data;
+};
+
+const getTags = async () => {
+  const tags = new BaaS.Collection('devTags');
+  const response = await tags.get({ exclude: ['createdAt'] });
+  const { data } = response.data;
+
+  data.unshift({ name: '全部', type: -1 });
+  return data;
+};
+
+Page.getInitialProps = async () => {
+  const posts = await getPosts();
+  const tags = await getTags();
+
+  return { posts, tags };
 };
 
 export default Page;

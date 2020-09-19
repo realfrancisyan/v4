@@ -15,9 +15,24 @@ const Footer: React.FC = () => {
               <img src={Logo} className={styles.logo} />
             </a>
           </Link>
-          <p className={styles.coop}>如对我的项目有兴趣，或想与我合作，</p>
           <p className={styles.coop}>
-            欢迎随时<a href="/">联系或聘用</a>。
+            Proudly powered by{' '}
+            <a
+              href="https://github.com/realfrancisyan/curve"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Curve
+            </a>{' '}
+            and its{' '}
+            <a
+              href="https://github.com/realfrancisyan/curve-js-sdk"
+              target="_blank"
+              rel="noreferrer"
+            >
+              JS SDK companion
+            </a>
+            .
           </p>
         </div>
 

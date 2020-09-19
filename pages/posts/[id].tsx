@@ -3,9 +3,9 @@ import BaaS from 'curve-js-sdk';
 import ReactMarkdown from 'react-markdown';
 import { NextPage, NextPageContext } from 'next';
 import moment from 'moment';
-import Layout from '../../../components/Layout';
-import styles from '../../../styles/Posts.module.css';
-import CodeBlock from '../../../components/CodeBlock';
+import Layout from '../../components/Layout';
+import styles from '../../styles/Posts.module.css';
+import CodeBlock from '../../components/CodeBlock';
 
 type Post = {
   id: string;

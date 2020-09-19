@@ -1,315 +1,111 @@
-/* 公用部分 */
-.section {
+.container {
   width: var(--screen);
   margin: 0 auto;
-  padding-top: 100px;
-  box-sizing: border-box;
+  padding: 50px 0;
+  display: flex;
 }
 
-.sectionTitle {
-  color: var(--light-gray);
-  font-size: var(--small);
-  letter-spacing: 2px;
-  padding-bottom: 30px;
-  font-weight: var(--bold);
+.posts {
+  width: var(--home-wrapper);
 }
 
-.project {
-  width: var(--screen);
-  margin: 0 auto;
+.category {
+  display: flex;
+  flex-direction: column;
   padding-top: 50px;
 }
 
-.projectWrapper {
-  width: var(--home-wrapper);
-  position: relative;
+.category:first-child {
+  padding-top: 0;
 }
 
-.projectImage {
-  width: 100%;
-}
-
-.projectTitleWrapper {
-  position: absolute;
-  bottom: 10%;
-  padding-left: 6%;
-}
-
-.projectTitle {
-  height: 40px;
-}
-
-.projectSubTitle {
-  font-size: var(--medium);
-  padding-top: 20px;
-  color: var(--white);
-}
-
-.projectDesc {
-  width: 75%;
-  padding-top: 20px;
-  font-size: var(--large);
-  line-height: 32px;
-  color: var(--dark-gray);
-}
-
-.curve {
-  transition: var(--transition);
-  color: var(--dark-gray);
-}
-
-.hire {
-  width: var(--screen);
-  background-color: #f5f7fa;
-  padding: 20px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  cursor: pointer;
-  transition: var(--transition);
-  line-height: 20px;
-}
-
-.available {
-  background-color: #4a89dc;
-  color: var(--white);
-  padding: 4px 8px;
-  border-radius: 2px;
-  font-size: var(--extra-small);
-  line-height: 16px;
-  text-transform: uppercase;
-  display: inline-block;
-  margin-right: 10px;
+.categoryTitle {
+  color: var(--light-gray);
+  font-size: var(--small);
+  letter-spacing: 2px;
   font-weight: var(--bold);
 }
 
-.bubble {
-  display: flex;
-  color: #4a89dc;
-}
-
-.rightArrow {
-  margin-left: 8px;
-}
-
-.projectLink {
-  display: inline-block;
-  padding-top: 30px;
-  color: var(--white);
-  font-weight: var(--bold);
-  transition: var(--transition);
-}
-
-.portalContainer {
-  width: var(--home-wrapper);
-}
-
-.portalListContainer {
+.postWrapper {
   display: flex;
   flex-wrap: wrap;
 }
 
-.portalList {
+.post {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
   width: 50%;
-  display: block;
-  padding-bottom: 30px;
 }
 
-.portalList:last-child {
-  padding-bottom: 0;
-}
-
-.portalLinkTitle {
-  margin-bottom: 10px;
-}
-
-.portalLink {
-  text-decoration: none;
-}
-
-.portalLinkWrapper {
+.titleWrapper {
   display: flex;
   align-items: center;
   transition: var(--transition);
-  font-size: var(--medium);
-}
-
-.portalLinkIcon {
-  width: 14px;
-  margin-left: 8px;
-}
-
-.portalDesc {
-  font-size: var(--small);
-  color: var(--gray);
-  line-height: 24px;
-  width: 80%;
-}
-
-.capabilities {
-  display: flex;
   width: var(--home-wrapper);
 }
 
-.capabilities .skills {
-  width: 50%;
-}
-
-.skills li {
-  font-size: var(--large);
-  color: var(--gray);
-  padding-bottom: 20px;
-}
-
-.skills li:last-child {
-  padding-bottom: 0;
-}
-
-.skills p {
-  width: 80%;
-  font-size: var(--medium);
+.title {
+  font-size: var(--extra-large);
   line-height: 32px;
+  cursor: pointer;
+}
+
+.linkIcon {
+  height: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.date {
+  padding: 10px 0;
   color: var(--gray);
 }
 
-.sideProjectWrapper {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 40px;
-  width: var(--home-wrapper);
-}
-
-.sideProject {
-  width: 32%;
-  height: 300px;
+.tags {
   position: relative;
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 4px;
-  transition: all 0.1s ease;
 }
 
-.sideProject img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-  border-radius: 4px;
+.tagWrapper {
+  position: sticky;
+  top: 176px;
 }
 
-.sideProject div {
-  position: absolute;
-  bottom: 0;
-  padding: 40px 30px;
+.tagList {
+  padding-top: 20px;
+  overflow: hidden;
 }
 
-.sideProject h3 {
-  font-size: 24px;
-  font-weight: 300;
-  padding-top: 12px;
-  color: var(--white);
+.tag {
+  margin: 10px 0;
+  font-size: var(--medium);
+  cursor: pointer;
+  color: var(--light-gray);
+  transition: var(--transition);
 }
 
-.sideProject p {
-  font-size: var(--extreme);
-  line-height: 28px;
-  font-weight: var(--bold);
-  color: var(--white);
+.tagActive {
+  color: var(--main-font-color);
 }
 
 @media screen and (min-width: 1061px) {
-  .curve:hover {
+  .titleWrapper:hover {
     opacity: 0.8;
   }
 
-  .hire:hover {
-    opacity: 0.9;
-  }
-
-  .projectLink:hover {
-    opacity: 0.8;
-  }
-
-  .portalLinkWrapper:hover {
-    opacity: 0.8;
-  }
-
-  .sideProject:hover {
-    opacity: 0.9;
+  .tag:hover {
+    color: var(--gray);
   }
 }
 
 @media screen and (max-width: 1060px) {
-  .section {
-    padding-top: 50px;
+  .tags {
+    display: none;
   }
+}
 
-  .projectTitle {
-    height: 20px;
-  }
-
-  .projectDesc {
+@media screen and (max-width: 768px) {
+  .post {
     width: 100%;
-    font-size: var(--medium);
-    line-height: 28px;
-  }
-
-  .hire {
-    width: 100%;
-    flex-direction: column;
-    align-items: baseline;
-  }
-
-  .bubble {
-    padding-top: 10px;
-    font-size: var(--normal);
-    line-height: 22px;
-  }
-
-  .portalList {
-    width: 100%;
-  }
-
-  .portalDesc {
-    width: 100%;
-  }
-
-  .skills li {
-    font-size: var(--medium);
-  }
-
-  .skills p {
-    font-size: var(--normal);
-    line-height: 24px;
-    width: 100%;
-  }
-
-  .sideProjectWrapper {
-    flex-direction: column;
-  }
-
-  .sideProject {
-    width: 100%;
-    height: 200px;
-    margin-bottom: 20px;
-  }
-
-  .sideProject:last-child {
-    margin-bottom: 0;
-  }
-
-  .sideProject h3 {
-    font-size: 20px;
-    padding-top: 10px;
-  }
-
-  .sideProject p {
-    font-size: 24px;
-    line-height: 30px;
-  }
-
-  .sideProjectWrapper {
-    padding-bottom: 0;
   }
 }
