@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p 3000",
+    "prod": "NODE_ENV=production pm2 start npm --name next-blog -- start --node-args='--harmony-destructuring --harmony_rest_parameters'",
+    "stop": "pm2 stop next-blog"
   },
   "dependencies": {
     "axios": "^0.20.0",
@@ -16,6 +18,7 @@
     "next": "9.5.3",
     "next-images": "^1.4.1",
     "nprogress": "^0.2.0",
+    "pm2": "^4.4.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-markdown": "^4.3.1",
