@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '../styles/Header.module.css';
-import Logo from '../assets/images/logo.svg';
+import Logo from '../assets/images/logo.png';
 import GitHubIcon from '../assets/images/github.svg';
 import InstagramIcon from '../assets/images/instagram.svg';
 

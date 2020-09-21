@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '../styles/Footer.module.css';
-import Logo from '../assets/images/logo-white.svg';
+import Logo from '../assets/images/logo-white.png';
 import GitHubIcon from '../assets/images/github.svg';
 import InstagramIcon from '../assets/images/instagram.svg';
 
