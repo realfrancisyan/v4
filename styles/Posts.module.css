@@ -1,50 +1,59 @@
 .container {
-  width: var(--screen);
+  width: 720px;
   margin: 0 auto;
   padding: 50px 0;
 }
 
 .title {
-  font-size: 28px;
+  font-size: 36px;
+  line-height: 48px;
 }
 
 .date {
-  font-size: var(--small);
+  font-size: var(--normal);
   color: var(--gray);
-  padding: 30px 0;
+  padding: 20px 0 80px;
 }
 
 .markdown {
-  width: var(--post-wrapper);
+  /* width: var(--post-wrapper); */
 }
 
 .article * {
   color: var(--dark-gray);
-  line-height: 32px;
-}
-
-.article h2 {
-  font-size: var(--extra-large);
-}
-
-.article h3 {
-  font-size: var(--large);
-}
-
-.article h4 {
   font-size: var(--medium);
-}
-
-.article h5 {
-  font-size: var(--medium);
-}
-
-.article h6 {
-  font-size: var(--small);
+  line-height: 36px;
 }
 
 .article h1 {
-  font-size: var(--extreme);
+  font-size: var(--heading1);
+  line-height: 42px;
+  padding: 40px 0 20px;
+}
+
+.article h2 {
+  font-size: var(--heading2);
+  padding: 35px 0 18px;
+}
+
+.article h3 {
+  font-size: var(--heading3);
+  padding: 30px 0 16px;
+}
+
+.article h4 {
+  font-size: var(--heading4);
+  padding: 25px 0 14px;
+}
+
+.article h5 {
+  font-size: var(--heading5);
+  padding: 20px 0 12px;
+}
+
+.article h6 {
+  font-size: var(--heading5);
+  padding: 15px 0 10px;
 }
 
 .article h1,
@@ -59,8 +68,7 @@
 }
 
 .article p {
-  font-size: var(--medium);
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .article a {
@@ -69,12 +77,12 @@
 
 .article ul,
 .article ol {
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 .article ol li {
   list-style-type: decimal;
-  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .article ul li {
@@ -124,9 +132,9 @@
 }
 
 .article pre {
-  font-size: var(--small) !important;
   margin-bottom: 40px !important;
   background-color: #f5f7fa !important;
+  font-size: var(--normal) !important;
 }
 
 .article hr {
@@ -143,9 +151,17 @@
   }
 }
 
+@media screen and (max-width: 1440px) {
+}
+
 @media screen and (max-width: 1060px) {
+  .container {
+    width: var(--screen);
+  }
+
   .title {
-    font-size: 26px;
+    font-size: 36px;
+    line-height: 46px;
   }
 
   .article * {

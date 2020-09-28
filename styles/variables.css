@@ -18,6 +18,13 @@
   --small: 14px;
   --extra-small: 10px;
 
+  --heading1: 26px;
+  --heading2: 24px;
+  --heading3: 22px;
+  --heading4: 20px;
+  --heading5: 18px;
+  --heading6: 16px;
+
   /* font weight */
   --bold: 600;
   --semi-bold: 500;
@@ -54,5 +61,12 @@
     --normal: 14px;
     --small: 12px;
     --extra-small: 8px;
+
+    --heading1: 24px;
+    --heading2: 22px;
+    --heading3: 20px;
+    --heading4: 18px;
+    --heading5: 16px;
+    --heading6: 14px;
   }
 }

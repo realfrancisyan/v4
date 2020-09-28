@@ -3,6 +3,7 @@ import BaaS from 'curve-js-sdk';
 import ReactMarkdown from 'react-markdown';
 import { NextPage, NextPageContext } from 'next';
 import moment from 'moment';
+import readingTime from 'reading-time';
 import Layout from '../../components/Layout';
 import styles from '../../styles/Posts.module.css';
 import CodeBlock from '../../components/CodeBlock';
@@ -17,8 +18,16 @@ type Post = {
   updatedAt: string;
 };
 
+type Stats = {
+  text: string;
+  minutes: number;
+  time: number;
+  words: number;
+};
+
 type Props = {
   post: Post;
+  stats: Stats;
 };
 
 type ImageProps = {
@@ -51,13 +60,13 @@ const LinkComponent = (props: any) => {
   );
 };
 
-const Page: NextPage<Props> = ({ post }: Props) => {
+const Page: NextPage<Props> = ({ post, stats }: Props) => {
   return (
     <Layout title={post.title}>
       <section className={styles.container}>
         <h2 className={styles.title}>{post.title}</h2>
         <p className={styles.date}>
-          {moment(post.createdAt).format('YYYY年M月D日')}
+          {moment(post.createdAt).format('YYYY年M月D日')} · {stats.text}
         </p>
         <article className={`${styles.markdown} ${styles.article}`}>
           <ReactMarkdown
@@ -83,8 +92,9 @@ const getPost = async (id: string | string[]) => {
 Page.getInitialProps = async (context: NextPageContext) => {
   const { id } = context.query;
   const data = await getPost(id);
+  const stats = readingTime(data.body, { wordsPerMinute: 80 });
 
-  return { post: data };
+  return { post: data, stats };
 };
 
 export default Page;

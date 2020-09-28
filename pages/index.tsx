@@ -52,9 +52,8 @@ const Page: NextPage<Props> = ({ posts = [], tags = [] }: Props) => {
                         <Link href="/post/[id]" as={`/post/${post.id}`}>
                           <div className={styles.titleWrapper}>
                             <span className={styles.title}>
-                              <a>{post.title}</a>
+                              <a className={styles.link} href={`/post/${post.id}`}>{post.title}</a>
                             </span>
-                            <img src={ArrowIcon} className={styles.linkIcon} />
                           </div>
                         </Link>
                         <p className={styles.date}>

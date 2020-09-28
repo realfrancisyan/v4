@@ -42,13 +42,17 @@
   display: flex;
   align-items: center;
   transition: var(--transition);
-  width: var(--home-wrapper);
+  width: var(--post-wrapper);
 }
 
 .title {
   font-size: var(--extra-large);
   line-height: 32px;
   cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
 }
 
 .linkIcon {
