@@ -49,7 +49,7 @@ const Page: NextPage<Props> = ({ posts = [], tags = [] }: Props) => {
                   {postByMonth.data.map((post: Post) => {
                     return (
                       <div className={styles.post} key={post.id}>
-                        <Link href="/posts/[id]" as={`/posts/${post.id}`}>
+                        <Link href="/post/[id]" as={`/post/${post.id}`}>
                           <div className={styles.titleWrapper}>
                             <span className={styles.title}>
                               <a>{post.title}</a>
