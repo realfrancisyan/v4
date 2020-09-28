@@ -67,7 +67,7 @@ const Page: NextPage<Props> = ({ post }: Props) => {
               image: ImageComponent,
               link: LinkComponent,
             }}
-          ></ReactMarkdown>
+          />
         </article>
       </section>
     </Layout>
