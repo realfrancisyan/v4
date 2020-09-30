@@ -1,12 +1,36 @@
+.parent {
+  width: var(--screen);
+  margin: 0 auto;
+  display: flex;
+}
+
+.aside {
+  width: 240px;
+  position: relative;
+  padding-top: 60px;
+}
+
+.share {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: sticky;
+  top: 100px;
+}
+
+.shareButton {
+  margin-bottom: 16px;
+}
+
 .container {
   width: 720px;
-  margin: 0 auto;
   padding: 50px 0;
 }
 
 .title {
   font-size: 36px;
   line-height: 48px;
+  font-weight: var(--bold);
 }
 
 .date {
@@ -155,6 +179,10 @@
 }
 
 @media screen and (max-width: 1060px) {
+  .aside {
+    display: none;
+  }
+
   .container {
     width: var(--screen);
   }
