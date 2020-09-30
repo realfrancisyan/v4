@@ -39,10 +39,6 @@
   padding: 20px 0 80px;
 }
 
-.markdown {
-  /* width: var(--post-wrapper); */
-}
-
 .article * {
   color: var(--dark-gray);
   font-size: var(--medium);

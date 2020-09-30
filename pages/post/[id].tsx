@@ -46,31 +46,23 @@ type ImageProps = {
 };
 
 const ShareComponent = ({ post }: Post) => {
+  const url = `https://jiajunyan.com/post/${post.id}`;
   return (
     <>
       <FacebookShareButton
-        url={`https://jiajunyan.com/post/${post.id}`}
+        url={url}
         quote={post.title}
         className={styles.shareButton}
       >
         <FacebookIcon size={32} round />
       </FacebookShareButton>
-      <TwitterShareButton
-        url={`https://jiajunyan.com/post/${post.id}`}
-        className={styles.shareButton}
-      >
+      <TwitterShareButton url={url} className={styles.shareButton}>
         <TwitterIcon size={32} round />
       </TwitterShareButton>
-      <EmailShareButton
-        url={`https://jiajunyan.com/post/${post.id}`}
-        className={styles.shareButton}
-      >
+      <EmailShareButton url={url} className={styles.shareButton}>
         <EmailIcon size={32} round />
       </EmailShareButton>
-      <WeiboShareButton
-        url={`https://jiajunyan.com/post/${post.id}`}
-        className={styles.shareButton}
-      >
+      <WeiboShareButton url={url} className={styles.shareButton}>
         <WeiboIcon size={32} round />
       </WeiboShareButton>
     </>
