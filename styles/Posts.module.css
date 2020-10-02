@@ -112,6 +112,7 @@
 .article ul li,
 .article ol li {
   font-size: var(--medium);
+  margin-left: 20px;
 }
 
 .article ul li ul,
@@ -188,8 +189,8 @@
   }
 
   .title {
-    font-size: 36px;
-    line-height: 46px;
+    font-size: 28px;
+    line-height: 42px;
   }
 
   .article * {
