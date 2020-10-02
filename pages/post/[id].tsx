@@ -45,7 +45,7 @@ type ImageProps = {
   title: string;
 };
 
-const ShareComponent = ({ post }: Post) => {
+const ShareComponent = ({ post }: any) => {
   const url = `https://jiajunyan.com/post/${post.id}`;
   return (
     <>

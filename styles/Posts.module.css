@@ -179,8 +179,12 @@
     display: none;
   }
 
-  .container {
+  .parent {
     width: var(--screen);
+  }
+
+  .container {
+    width: 100%;
   }
 
   .title {
