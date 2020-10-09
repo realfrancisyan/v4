@@ -127,7 +127,7 @@ const Page: NextPage<Props> = ({ post, stats }: Props) => {
 
 const getPost = async (id: string | string[]) => {
   const dev = new BaaS.Collection('dev');
-  const response = await dev.getDocument(id);
+  const response = await dev.findOne(id);
   return response.data.data;
 };
 

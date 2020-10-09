@@ -122,7 +122,7 @@ const mapMonth = (posts: Post[]) => {
 
 const getPosts = async () => {
   const dev = new BaaS.Collection('dev');
-  const response = await dev.get({
+  const response = await dev.find({
     pageSize: 9999,
     exclude: ['body', 'updatedAt'],
   });
@@ -132,7 +132,7 @@ const getPosts = async () => {
 
 const getTags = async () => {
   const tags = new BaaS.Collection('devTags');
-  const response = await tags.get({ exclude: ['createdAt'] });
+  const response = await tags.find({ exclude: ['createdAt'] });
   const { data } = response.data;
 
   data.unshift({ name: '全部', type: -1 });
