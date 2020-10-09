@@ -5,7 +5,6 @@ import Link from 'next/link';
 import moment from 'moment';
 import Layout from '../components/Layout';
 import styles from '../styles/Home.module.css';
-import ArrowIcon from '../assets/images/arrow.svg';
 
 type Post = {
   id: string;
