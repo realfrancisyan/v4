@@ -5,7 +5,7 @@ import Router from 'next/router';
 import { AppProps } from 'next/app';
 import '../styles/globals.css';
 
-BaaS.init({host: 'https://api.curve.to'});
+BaaS.init({ host: 'https://api.curve.to' });
 
 Router.events.on('routeChangeStart', () => {
   NProgress.start();
